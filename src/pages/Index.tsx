@@ -59,41 +59,24 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="p-8 shadow-card hover:shadow-glow transition-all duration-300 bg-card/50 backdrop-blur-sm border-primary/20 group hover:scale-105">
-              <div className="mb-6 inline-flex p-3 rounded-lg gradient-primary">
-                <Zap className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:gradient-text transition-all">
-                Lightning Fast
-              </h3>
-              <p className="text-muted-foreground">
-                Experience blazing-fast performance with our optimized infrastructure
-              </p>
-            </Card>
-
-            <Card className="p-8 shadow-card hover:shadow-glow transition-all duration-300 bg-card/50 backdrop-blur-sm border-primary/20 group hover:scale-105">
-              <div className="mb-6 inline-flex p-3 rounded-lg gradient-secondary">
-                <Shield className="w-6 h-6 text-secondary-foreground" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:gradient-text transition-all">
-                Secure & Reliable
-              </h3>
-              <p className="text-muted-foreground">
-                Bank-level security with 99.9% uptime guarantee for peace of mind
-              </p>
-            </Card>
-
-            <Card className="p-8 shadow-card hover:shadow-glow transition-all duration-300 bg-card/50 backdrop-blur-sm border-primary/20 group hover:scale-105">
-              <div className="mb-6 inline-flex p-3 rounded-lg gradient-primary">
-                <Sparkles className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:gradient-text transition-all">
-                Easy to Use
-              </h3>
-              <p className="text-muted-foreground">
-                Intuitive interface designed to get you started in minutes, not hours
-              </p>
-            </Card>
+            {[
+              { icon: <Zap className="w-6 h-6 text-primary-foreground" />, title: "Lightning Fast", desc: "Experience blazing-fast performance with our optimized infrastructure", color: "gradient-primary" },
+              { icon: <Shield className="w-6 h-6 text-secondary-foreground" />, title: "Secure & Reliable", desc: "Bank-level security with 99.9% uptime guarantee for peace of mind", color: "gradient-secondary" },
+              { icon: <Sparkles className="w-6 h-6 text-primary-foreground" />, title: "Easy to Use", desc: "Intuitive interface designed to get you started in minutes, not hours", color: "gradient-primary" }
+            ].map((f, i) => (
+              <Card
+                key={i}
+                className="p-8 shadow-card hover:shadow-glow transition-all duration-500 bg-card/50 backdrop-blur-sm border-primary/20 group hover:scale-105 hover:-translate-y-2"
+              >
+                <div className={`mb-6 inline-flex p-3 rounded-lg ${f.color}`}>
+                  {f.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4 group-hover:gradient-text transition-all">
+                  {f.title}
+                </h3>
+                <p className="text-muted-foreground">{f.desc}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -106,10 +89,10 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold">
-              Ready to Get Started?
+              Ready to Take the Leap?
             </h2>
             <p className="text-xl text-muted-foreground">
-              Join thousands of satisfied users and transform your workflow today
+              Start building today and unlock the full potential of your ideas 🚀
             </p>
             <div className="pt-4">
               <Button variant="hero" size="lg" className="group">

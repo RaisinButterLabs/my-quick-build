@@ -35,7 +35,7 @@ const Index = () => {
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="heroOutline" size="lg">
-                Learn More
+                Check this out
               </Button>
             </div>
           </div>

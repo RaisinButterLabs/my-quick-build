@@ -109,7 +109,7 @@ const Index = () => {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-muted-foreground">
-              Join thousands of satisfied users and transform your workflow today
+              Join thousands of our satisfied users and transform your workflow today
             </p>
             <div className="pt-4">
               <Button variant="hero" size="lg" className="group">
